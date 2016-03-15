@@ -28,15 +28,16 @@ class GroceryList extends React.Component {
       groceriesComponents.push(
           <GroceryListItem
             grocery={this.state.groceries[index]}
+            key={index}
           />
       );
     }
 
     // Hint: Don't forget about putting items into `ul`
     return (
-      <div>
-        // Put your code here
-      </div>
+      <ul>
+        {groceriesComponents}
+      </ul>
     );
   }
 }
@@ -51,7 +52,7 @@ class GroceryListItem extends React.Component {
   render() {
     return (
         <li>
-          // Put your code here.
+          {this.props.grocery.name}
         </li>
     );
   }
